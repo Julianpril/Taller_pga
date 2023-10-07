@@ -9,7 +9,7 @@
         <a href="view/ejercicio1.php">Ejercicio 1</a>
     </div>
     <div>
-        <button>Ejercicio 2</button>
+        <a href="view/ejercicio2.php">Ejercicio 2</a>
     </div>
     <div>
         <button>Ejercicio 3</button>
