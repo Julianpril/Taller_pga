@@ -22,13 +22,16 @@ foreach($ord_may_men as $item1){
 echo '<br>';
 echo "Lista ordenada de numeros Pares  de mayor a menor";
 echo '<br>';
+$lista_Par = [];
+$lista_impar =[];
 foreach($listanum as $item){
-    $result = $item % 2;
-    if($resul==0){
-        $lista_Par =[$item];
+    if($item % 2==0){
+        $lista_Par[] = $item;
     }
     rsort($lista_Par);
-    echo $lista_Par." ";
+    foreach($lista_Par as $item2){
+    echo $item2." ";
+    }
 }
 ?>
 </body>
