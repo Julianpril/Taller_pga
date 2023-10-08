@@ -3,19 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Ejercicios</title>
+    <link rel="stylesheet" href="inicio.css">
 </head>
 <body>
-    <div>
-        <a href="view/ejercicio1.php">Ejercicio 1</a>
+    <div class="container">
+        <div class="eje_container">
+            <a href="view/ejercicio1.php" class="eje">Ejercicio 1</a>
+        </div>
+        <div class="eje_container">
+            <a href="view/ejercicio2.php" class="eje">Ejercicio 2</a>
+        </div>
+        <div class="eje_container">
+            <a href="" class="eje">Ejercicio 3</a>
+        </div>
+        <div class="eje_container">
+            <a href="" class="eje">Ejercicio 4</a>
+        </div>
     </div>
-    <div>
-        <a href="view/ejercicio2.php">Ejercicio 2</a>
-    </div>
-    <div>
-        <button>Ejercicio 3</button>
-    </div>
-    <div>
-        <button>Ejercicio 4</button>
-    </div>
+
 </body>
 </html>
