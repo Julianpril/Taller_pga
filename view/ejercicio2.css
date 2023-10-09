@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Red Hat Display', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #d7edff;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-content: center; 
+}
+
+.container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    padding: 20px;
+}
+
+.triangulo-bottom {
+    width: 0;
+    height: 0;
+    border-right: 50px solid transparent;
+    border-top: 50px solid transparent;
+    border-left: 50px solid transparent;
+    border-bottom: 50px solid #f0ad4e;
+    position: relative;
+    transform: translateY(-25%) translateX(25%); 
+}
+
+.circulo-bottom {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #5cb85c;
+    position: relative;
+    transform: translateY(25%) translateX(40%); 
+}
+
+.cuadrado-bottom {
+    width: 80px;
+    height: 80px;
+    border: 1.2px solid #555;
+    background: #428bca;
+    position: relative;
+    transform: translateY(7%) translateX(25%); 
+}
+
+.rectangulo-bottom {
+    width: 100px;
+    height: 30px;
+    border: 1.2px solid #555;
+    background: #428bca;
+    position: relative;
+    transform: translateY(25%); 
+    margin-bottom: 10px;
+}
+
+.container:hover{
+    cursor: pointer;
+}
+
+.eje {
+    float: left;
+    color: black;
+    text-decoration: none;
+}
