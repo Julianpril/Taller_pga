@@ -1,35 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap');
 * {
     margin: 0;
     box-sizing: border-box;
 }
 
 body {
-    font-family: 'Red Hat Display', sans-serif;
+    font-family: 'Pixelify Sans', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     margin: 0 auto;
     background-image: url('recursos/html.jpg');
+    background-size:cover;
+    background-position:center;
 }
-.container {
-    background-color: white;
-    width: 50%;
-    max-width: 1440px;
-    margin: 0 auto;
-    border-radius: 10px;
-    box-shadow: 0 5px 10px -5px rgb(0, 0, 0, 15);
-    text-align: center;
+
+.title {
+    position: absolute;
+    font-size: 40px;
+    color: white;
+    margin-bottom: 20%;
 }
-.eje_container {
-    width: 50%;
-    margin: 10px auto;
-    border-radius: 10px;
-    padding-bottom: 10px;
-    box-shadow: 0 5px 10px -5px rgb(0, 0, 0, .6);
-    border: 1px solid #ccc;
-}
-.eje{
-    color: black;
+
+.nav-item {
+    color: #fff;
+    padding: 10px;
+    margin: 5px;
     text-decoration: none;
+    position: relative;
+    border-radius: 8px;
 }
+
+.nav-item.color1 { background-color: #dcdf41; }
+.nav-item.color2 { background-color: #ff2f2f; }
+.nav-item.color3 { background-color: #57e56c; }
+.nav-item.color4 { background-color: #aaa; }
+
+.nav-item:hover {
+    transition: 0.4s ease-in-out;
+}
+
+.color1:hover { background-color: #bbbf3d; }
+.color2:hover { background-color: #8f1e1e; }
+.color3:hover { background-color: #2c7a37; }
+.color4:hover { background-color: #252525; }
