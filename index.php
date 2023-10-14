@@ -14,7 +14,7 @@
             <a href="view/ejercicio2.php" class="eje">Ejercicio 2</a>
         </div>
         <div class="eje_container">
-            <a href="" class="eje">Ejercicio 3</a>
+            <a href="view/ejercicio3.php" class="eje">Ejercicio 3</a>
         </div>
         <div class="eje_container">
             <a href="" class="eje">Ejercicio 4</a>
