@@ -11,9 +11,13 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    background-image: url("/recursos/html.jpg");
+    background-image: url('recursos/html.jpg');
+    background-size:cover;
+    background-position:center;
 }
-
+input {
+    font-family: 'Pixelify Sans', sans-serif;
+}
 .main {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

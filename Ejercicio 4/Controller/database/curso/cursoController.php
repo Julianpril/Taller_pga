@@ -8,7 +8,7 @@ class CursoController extends EntityController{
 
     function allData()
     {
-        $sql
+    
     }
 }
 ?>

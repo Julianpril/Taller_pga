@@ -13,8 +13,8 @@ body {
     min-height: 100vh;
     margin: 0 auto;
     background-image: url('recursos/html.jpg');
-    background-size: cover;
-    background-position: center;
+    background-size:cover;
+    background-position:center;
 }
 
 input {
