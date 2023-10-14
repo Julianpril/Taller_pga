@@ -10,7 +10,7 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0 auto;
-    background-color: #d7edff;
+    background-image: url('recursos/html.jpg');
 }
 .container {
     background-color: white;
