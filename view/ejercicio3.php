@@ -1,18 +1,22 @@
 <?php
-require_once __DIR__.'/../Controller/Notas/NotasController.php';
+require_once __DIR__ . '/../Controller/Notas/NotasController.php';
 
 
 use Controller\Notas\NotasController\NotasController;
+
 $materia = new NotasController();
 
 
 ?>
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Ejercicio3</title>
+    <link rel="stylesheet" href="ejercicio3.css">
 </head>
+
 <body>
     <form action="#" method="post" name="formulario">
         <h1>Calculador de promedio de una materia</h1>
@@ -32,14 +36,18 @@ $materia = new NotasController();
             <label>Ingrese la cantidad de notas:</label>
             <input type="number" name="cantidad_notas" min="1" required>
         </div>
-        <input type="submit" name="submit" value="Generar">
+        <input type="submit" name="submit" value="Generar" class="btn">
     </form>
-    
     <?php
-        $materia->numeroNotas();
-        if(isset($_POST['submit'])) {
-            $materia->promedioNotas();
-        }
-    ?> 
+    $materia->numeroNotas();
+    if (isset($_POST['submit'])) {
+        $materia->promedioNotas();
+    }
+    if (isset($_POST['notas']) && is_array($_POST['notas']) && !empty($_POST['notas'])) {
+        echo "<input type='hidden' name='notas[]' value='" . implode(',', $_POST['notas']) . "'>";
+    }
+    ?>
+
 </body>
+
 </html>
