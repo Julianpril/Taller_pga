@@ -41,6 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 
 <body>
+    <h1 class="titulo">Calcular el area de las figuras geometricas.</h1>
     <a href="../index.php" class="eje">Volver</a>
     <main class="main">
         <div class="container">

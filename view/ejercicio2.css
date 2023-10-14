@@ -11,9 +11,10 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    background-image: url('recursos/html.jpg');
+    background-image: url('rcs/html.jpg');
     background-size:cover;
     background-position:center;
+    color: #fff;
 }
 input {
     font-family: 'Pixelify Sans', sans-serif;
@@ -26,11 +27,11 @@ input {
 }
 
 .container {
-    background-color: white;
     border-radius: 10px;
     box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.15);
     text-align: center;
     padding: 20px;
+    position: relative;
 }
 
 .triangulo-bottom {
@@ -39,37 +40,39 @@ input {
     border-right: 50px solid transparent;
     border-top: 50px solid transparent;
     border-left: 50px solid transparent;
-    border-bottom: 50px solid #f0ad4e;
+    border-bottom: 50px solid #ddf00b;
     position: relative;
-    transform: translateY(-25%) translateX(25%); 
+    transform: translateY(-25%) translateX(8em); 
 }
 
 .circulo-bottom {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    background: #5cb85c;
+    background: #0bf00f;
     position: relative;
-    transform: translateY(25%) translateX(40%); 
+    transform: translateY(0.5em) translateX(8em); 
+    margin-bottom: 20px;
 }
 
 .cuadrado-bottom {
     width: 80px;
     height: 80px;
     border: 1.2px solid #555;
-    background: #428bca;
+    background: #14dae0;
     position: relative;
-    transform: translateY(7%) translateX(25%); 
+    transform: translateY(7%) translateX(7em); 
+    margin-bottom: 20px;
 }
 
 .rectangulo-bottom {
     width: 100px;
     height: 30px;
     border: 1.2px solid #555;
-    background: #428bca;
+    background:#fe019a;
     position: relative;
-    transform: translateY(25%); 
-    margin-bottom: 10px;
+    transform: translateY(25%) translateX(7em) ; 
+    margin-bottom: 20px;
 }
 
 .container:hover{
@@ -78,6 +81,81 @@ input {
 
 .eje {
     float: left;
-    color: black;
+    color: #fff;
     text-decoration: none;
+    position: absolute;
+    top: 90%;
+    font-size: 20px;
+}
+.eje:hover{
+    font-size: 25px;
+    transition: 0.4s ease-in-out;
+}
+.texto1{
+    background-color: transparent;
+    border: 2px solid #ddf00b;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    width: 150px;
+    height: 30px;
+    margin-bottom: 10px;
+}
+.btn1{
+    background-color: #bbbf3d;
+    color: #fff;
+    border-radius: 5px;
+}
+.texto2{
+    background-color: transparent;
+    border: 2px solid #0bf00f;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    width: 150px;
+    height: 30px;
+    margin-bottom: 10px;
+}
+.btn2{
+    background-color:#0bf00f ;
+    color: #fff;
+    border-radius: 5px;
+}
+.texto3{
+    background-color: transparent;
+    border: 2px solid #14dae0;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    width: 150px;
+    height: 30px;
+    margin-bottom: 10px;
+}
+.btn3{
+    background-color:#14dae0 ;
+    color: #fff;
+    border-radius: 5px;
+}
+.texto4{
+    background-color: transparent;
+    border: 2px solid #fe019a;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    width: 150px;
+    height: 30px;
+    margin-bottom: 10px;
+}
+.btn4{
+    background-color:#fe019a ;
+    color: #fff;
+    border-radius: 5px;
+}
+.titulo{
+    position: absolute;
+    bottom: 90%;
 }

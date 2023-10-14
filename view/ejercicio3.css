@@ -3,20 +3,54 @@
 * {
     margin: 0;
     box-sizing: border-box;
+    
 }
 
 body {
     font-family: 'Pixelify Sans', sans-serif;
     display: flex;
-    justify-content: center;
-    align-items: center;
     min-height: 100vh;
     margin: 0 auto;
-    background-image: url('recursos/html.jpg');
+    background-image: url('rcs/html.jpg');
     background-size:cover;
     background-position:center;
+    color: #fff;
 }
 
 input {
     font-family: 'Pixelify Sans', sans-serif;
+    background-color: transparent;
+    border: 2px solid #fe019a;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    width: 150px;
+    height: 30px;
+    margin-bottom: 10px;
+}
+.titulo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -11em);
+    text-align: center;
+}
+.container{
+    margin-left: 30px;
+   position: absolute;
+    bottom: 300px;
+}
+.container2{
+    position: absolute;
+    top: -5em;
+    left: 500px;
+}
+.eje {
+    float: left;
+    color: #fff;
+    text-decoration: none;
+    position: absolute;
+    transform: translate(35em, 11em);
+    font-size: 20px;
 }

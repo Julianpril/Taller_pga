@@ -12,12 +12,13 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0 auto;
-    background-image: url('recursos/html.jpg');
+    background-image: url('rcs/html.jpg');
     background-size:cover;
     background-position:center;
+    color: #fff;
 }
+
 .container {
-    background-color: white;
     width: 50%;
     max-width: 1440px;
     margin: 0 auto;
@@ -32,7 +33,11 @@ body {
 .eje {
     float: left;
     margin-left: 10px;
-    color: black;
+    color: #fff;
     text-decoration: none;
     
+}
+.titulo{
+    position: absolute;
+    bottom: 90%;
 }
