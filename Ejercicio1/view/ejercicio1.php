@@ -11,7 +11,7 @@
     <h1 class="titulo">Lista de numeros</h1>
     <div class="container">
         <h2>Lista</h2>
-        <a href="../index.php" class="eje">Volver</a>
+        <a href="../../index.php" class="eje">Volver</a>
         <br>
         <div class="lista">
             <?php

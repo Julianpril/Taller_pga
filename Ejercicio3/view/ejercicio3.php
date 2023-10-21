@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../Controller/Notas/NotasController.php';
+require_once __DIR__ . '../../../Ejercicio3/Controller/Notas/NotasController.php';
 
 
 use Controller\Notas\NotasController\NotasController;
@@ -38,7 +38,7 @@ $materia = new NotasController();
                 <input type="number" name="cantidad_notas" min="1" required>
             </div>
             <did>
-            <a href="../index.php" class="eje">Volver</a>
+            <a href="../../index.php" class="eje">Volver</a>
             </did>
         </div>  
         <input type="submit" name="submit" value="Generar" class="btn">

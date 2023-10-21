@@ -1,5 +1,5 @@
 <?php
-require_once '/xampp/htdocs/Taller_pga/Controller/FigurasGeometricas/FigurasGeoController.php';
+require_once '../../Ejercicio2/Controller/FigurasGeometricas/FigurasGeoController.php';
 
 use Controller\FigurasGeometricas\FigurasGeoController\TrianguloController;
 use Controller\FigurasGeometricas\FigurasGeoController\CirculoController;
@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <body>
     <h1 class="titulo">Calcular el area de las figuras geometricas.</h1>
-    <a href="../index.php" class="eje">Volver</a>
+    <a href="../../index.php" class="eje">Volver</a>
     <main class="main">
         <div class="container">
             <h2 class="title">Triángulo</h2>
