@@ -70,19 +70,26 @@ class DocentesController extends ControllersEntityController
     {
         $nombreDocente = $docente->get('nombre');
         $ultimoDocente = $this->allData()[count($this->allData()) - 1];
-        $ultimoCodigo = (int)$ultimoDocente->get('codigo');
+        $ultimoCodigo = (int)$ultimoDocente->get('cod');
         $nuevoCodigo = $ultimoCodigo + 1;
         $docente = new Docentes();
-        $docente->set('codigo', $nuevoCodigo);
+        $docente->set('cod', $nuevoCodigo);
         $docente->set('nombre', $nombreDocente);
         return "Docente agregado con éxito, ID: $nuevoCodigo";
     }
 
-    function updateItem($estudiante)
+    function updateItem($docente)
     {
     }
 
     function deleteItem($codigo)
     {
+        $sql = "DELETE FROM " . $this->dataTable . " WHERE cod = $codigo";
+        $resultSQL =$this-> execSql($sql);
+        if($resultSQL){
+            return"Registro eliminado ";
+        }
+        return"No se pudo eliminar el registro";
+
     }
 }

@@ -5,13 +5,13 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="accionEstudiante.php" method="post">
+    <form action="accionDocente.php" method="post">
         <h1>Confirmar operación</h1>
         <p>¿desea eliminar el registro ?</p>
         <input type="hidden" name="codigo" value="<?php echo $_GET['codigo'] ?>">
         <input  type="hidden" name="operacion" value="delete"> 
         <button type="submit">si</button>
-        <a href="..index.php">No</a>
+        <a href="docentes.php">No</a>
     </form>
 </body>
 </html>
