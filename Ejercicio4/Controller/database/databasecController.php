@@ -1,18 +1,16 @@
 <?php
-
-namespace Ejercicio4\Controller\database;
+namespace eje4\controllers\database;
 
 use mysqli;
 
-class DatabaseController
-{
+class DatabaseController{
     private $DB_HOST = 'localhost';
     private $DB_USER = 'root';
     private $DB_PWD = '';
     private $DB_NAME = 'asignaturas2_db';
     private $conx;
-    function __construct()
-    {
+
+    function __construct() {
         $this->conx = new mysqli(
             $this->DB_HOST,
             $this->DB_USER,
@@ -20,10 +18,11 @@ class DatabaseController
             $this->DB_NAME
         );
     }
-    function execSql($sql)
-    {
+
+    function execSql($sql){
         $result = $this->conx->query($sql);
         $this->conx->close();
         return $result;
     }
 }
+?>

@@ -1,10 +1,11 @@
 <?php
-namespace Ejercicio4\Model\curso;
 
-class Curso{
+namespace eje4\models\docentes;
+
+class Docentes{
     private $codigo;
     private $nombre;
-    private $docente;
+    private $ocupacion; 
 
     function get($prop){
         return $this->$prop;

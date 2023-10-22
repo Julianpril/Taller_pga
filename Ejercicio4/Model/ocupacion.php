@@ -1,14 +1,17 @@
 <?php
-namespace Ejercicio4\Model\ocupacion;
-class Ocupacion{
-    private $codigo;
-    private $nombre;
 
+namespace eje4\models;
+
+class Ocupacion{
+    private $id;
+    private $nombre;
+    
     function get($prop){
         return $this->$prop;
     }
-    function set($prop,$value){
-        $this->$prop=$value;
+
+    function set($prop, $value){
+        $this->$prop = $value;
     }
 }
 ?>
