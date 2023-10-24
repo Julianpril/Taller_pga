@@ -18,7 +18,6 @@ $lista = $cursoController->allData();
 </head>
 <body>
     <h1>Lista de Cursos</h1>
-    <a href="">Registrar</a>
     <a href="docentes.php">Volver</a>
     <table>
         <thead>

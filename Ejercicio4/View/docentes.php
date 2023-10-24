@@ -14,39 +14,40 @@ $lista = $docentesController->allData();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="Styles/docentes.css">
     <title>Document</title>
 </head>
 
 <body>
-    <h1>Lista de docentes</h1>
-    <a href="aggElemento.php">Registrar</a>
-    <a href="cursos.php">Todos los cursos</a>
-    <table>
+    <h1 class="main-heading">Lista de docentes</h1>
+    <a class="action-link" href="aggElemento.php">Registrar</a>
+    <a class="action-link" href="cursos.php">Todos los cursos</a>
+    <table class="data-table">
         <thead>
             <tr>
-                <th>Código</th>
-                <th>Nombre</th>
-                <th>Ocupación</th>
-                <th>Cursos</th>
-                <th></th>
-                <th></th>
+                <th class="table-header">Código</th>
+                <th class="table-header">Nombre</th>
+                <th class="table-header">Ocupación</th>
+                <th class="table-header">Cursos</th>
+                <th class="table-header"></th>
+                <th class="table-header"></th>
             </tr>
         </thead>
         <tbody>
             <?php
-            foreach ($lista as $docentes) {
+            foreach ($lista as $docente) {
                 echo '<tr>';
-                echo '  <td>' . $docentes->get('codigo') . '</td>';
-                echo '  <td>' . $docentes->get('nombre') . '</td>';
-                echo '  <td>' . $docentes->get('nombreOcupacion') . '</td>';
-                echo '  <td>';
-                echo '      <a href="cursos.php">ver</a>';
+                echo '  <td class="table-cell">' . $docente->get('codigo') . '</td>';
+                echo '  <td class="table-cell">' . $docente->get('nombre') . '</td>';
+                echo '  <td class="table-cell">' . $docente->get('nombreOcupacion') . '</td>';
+                echo '  <td class="table-cell">';
+                echo '      <a class="action-links" href="cursos.php">ver</a>';
                 echo '  </td>';
-                echo '  <td>';
-                echo '      <a href="formularioEstudiante.php?operacion=update&codigo=' . $docentes->get('codigo') . '">Modificar</a>';
+                echo '  <td class="table-cell">';
+                echo '      <a class="action-links" href="formularioEstudiante.php?operacion=update&codigo=' . $docente->get('codigo') . '">Modificar</a>';
                 echo '  </td>';
-                echo '  <td>';
-                echo '      <a href="confirmarEliminacion.php?codigo=' . $docentes->get('codigo') . '">Eliminar</a>';
+                echo '  <td class="table-cell">';
+                echo '      <a class="action-links" href="confirmarEliminacion.php?codigo=' . $docente->get('codigo') . '">Eliminar</a>';
                 echo '  </td>';
                 echo '</tr>';
             }
@@ -54,7 +55,6 @@ $lista = $docentesController->allData();
             ?>
         </tbody>
     </table>
-
 </body>
 
 </html>
