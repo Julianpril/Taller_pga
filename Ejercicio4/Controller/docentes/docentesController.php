@@ -72,6 +72,7 @@ class DocentesController extends ControllersEntityController
             $row = $result->fetch_assoc();
             $ultimoID = $row["ultimo_id"];
             $nuevoCodigo= $ultimoID + 1;
+            $nuevoCodigo = str_pad($nuevoCodigo,5,'0',STR_PAD_LEFT);
         }   
         $sql = "INSERT INTO docentes (cod,nombre, idOcupacion) VALUES ('$nuevoCodigo','$docente', $idOcupacion)";
         echo '<a href="docentes.php">Volver</a><br>';
