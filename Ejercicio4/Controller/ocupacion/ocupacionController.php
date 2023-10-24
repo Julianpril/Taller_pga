@@ -45,11 +45,11 @@ class ocupacionController extends EntityController
         return $ocupacion;
     }
 
-    function addItem($estudiante)
+    function addItem($ocupacion,$pk)
     {
     }
 
-    function updateItem($estudiante)
+    function updateItem($ocupacion)
     {
     }
 

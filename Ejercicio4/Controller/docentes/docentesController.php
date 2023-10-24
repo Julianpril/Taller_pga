@@ -1,9 +1,6 @@
 <?php
 
 namespace ejer4\controllers\docente;
-
-include __DIR__ . ('/../ocupacion/ocupacionController.php');
-
 use eje4\controllers\EntityController as ControllersEntityController;
 use eje4\controllers\ocupaciones\ocupacionController;
 use eje4\models\docentes\Docentes;
@@ -66,16 +63,19 @@ class DocentesController extends ControllersEntityController
     }
 
 
-    function addItem($docente)
+    function addItem($docente, $idOcupacion)
     {
-        $nombreDocente = $docente->get('nombre');
         $ultimoDocente = $this->allData()[count($this->allData()) - 1];
         $ultimoCodigo = (int)$ultimoDocente->get('codigo');
         $nuevoCodigo = $ultimoCodigo + 1;
-        $docente = new Docentes();
-        $docente->set('codigo', $nuevoCodigo);
-        $docente->set('nombre', $nombreDocente);
-        return "Docente agregado con éxito, ID: $nuevoCodigo";
+        $sql = "INSERT INTO docentes (cod,nombre, idOcupacion) VALUES ('$nuevoCodigo','$docente', $idOcupacion)";
+        echo $sql;
+        $resultSQL = $this->execSql($sql);
+        if ($resultSQL) {
+            return "Docente agregado con éxito";
+        } else {
+            return "Error al agregar docente";
+        }
     }
 
     function updateItem($estudiante)
@@ -84,5 +84,12 @@ class DocentesController extends ControllersEntityController
 
     function deleteItem($codigo)
     {
+        $sql = "DELETE FROM docentes WHERE cod = $codigo";
+        $resultSQL = $this->execSql($sql);
+        if ($resultSQL) {
+            return "Docente eliminado con éxito";
+        } else {
+            return "Error al eliminar docente";
+        }
     }
 }

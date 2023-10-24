@@ -1,9 +1,9 @@
 <?php
-include __DIR__ . '/../model/Docentes.php';
 include __DIR__ . '/../controller/entityController.php';
 include __DIR__ . '/../controller/database/databasecController.php';
+include __DIR__ . '/../controller/ocupacion/ocupacionController.php';
 include __DIR__ . '/../controller/docentes/docentesController.php';
-
+include __DIR__. '/../model/docentes.php';
 use ejer4\controllers\docente\DocentesController;
 $docentesController = new DocentesController();
 $lista = $docentesController->allData();
@@ -42,7 +42,7 @@ $lista = $docentesController->allData();
                 echo '      <a href="views/formularioEstudiante.php?operacion=update&codigo=' . $docentes->get('codigo') . '">Modificar</a>';
                 echo '  </td>';
                 echo '  <td>';
-                echo '      <a href="views/confirmarEliminacion.php?codigo=' . $docentes->get('codigo') . '">Eliminar</a>';
+                echo '      <a href="confirmarEliminacion.php?codigo=' . $docentes->get('codigo') . '">Eliminar</a>';
                 echo '  </td>';
                 echo '</tr>';
             }
