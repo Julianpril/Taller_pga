@@ -20,6 +20,7 @@ $lista = $docentesController->allData();
 <body>
     <h1>Lista de docentes</h1>
     <a href="aggElemento.php">Registrar</a>
+    <a href="cursos.php">Todos los cursos</a>
     <table>
         <thead>
             <tr>

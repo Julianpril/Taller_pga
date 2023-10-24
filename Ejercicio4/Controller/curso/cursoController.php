@@ -1,84 +1,78 @@
 <?php
+
 namespace eje4\controllers\curso;
-    
-include __DIR__ . ('/../docentes/docentesController.php');
+use eje4\controllers\EntityController as ControllersEntityController;
+use eje4\models\cursos\Cursos;
+use ejer4\controllers\docente\DocentesController;
 
-  use eje4\controllers\EntityController as ControllersEntityController;
-  use ejer4\controllers\docente\DocentesController;
-  use eje4\models\cursos\Cursos;
+class cursoController extends ControllersEntityController
+{
 
-  class cursoController extends ControllersEntityController{
-     
     private $dataTable = 'Cursos';
     function allData()
     {
-        $sql ="select *from " . $this->dataTable;
+        $sql = "select * from " . $this->dataTable;
         $resultSQL = $this->execSql($sql);
-        $lista =[];
-        if($resultSQL->num_rows >0){
-            while ($item=$resultSQL->fetch_assoc()) {
+        $lista = [];
+
+        if ($resultSQL->num_rows > 0) {
+            while ($item = $resultSQL->fetch_assoc()) {
                 $curso = new Cursos();
-                $curso->set('codigoC',$item['cod']);
-                $curso-> set ('nombreC',$item['nombre']);
-                $codDocente = $item['codDocente'];
-                $docenteController = new DocentesController();
-                $docente = $docenteController -> getItem($codDocente);
-                if($docente !== null){
-                    $nombreDocente = $docente->get('nombre');
-                    $docente->set('nombreDocente',$nombreDocente);
-                }else{
-                    echo "no existe docente";
+                $curso->set('codigo', $item['cod']);
+                $curso->set('nombre', $item['nombre']);
+                $codDoc = $item['codDocente'];
+                $docentecontroller = new DocentesController();
+                $docentes = $docentecontroller->getItem($codDoc);
+
+                if ($docentes !== null) {
+                    $nombredelDocente = $docentes->get('nombre');
+                    $curso->set('codDocente', $nombredelDocente);
+                } else {
+                    echo "no existe";
                 }
 
-                array_push($lista,$curso);
+                array_push($lista, $curso);
             }
         }
         return $lista;
     }
 
+
     function getItem($codigo)
     {
-        $sql = "select * from " . $this->dataTable . " where codigo=" . $codigo;
+        $sql = "select * from " . $this->dataTable . " where cod = '. $codigo .'";
         $resultSQL = $this->execSql($sql);
         $curso = null;
-        if($resultSQL->num_rows >0){
-            while ($item = $resultSQL->fetch_assoc()){
-                $curso=new Cursos();
-                $curso->set('codigoC',$item['cod']);
-                $curso->set('nombreC',$item['nombre']);
-                $codDocente =$item['codDocente'];
+
+        if ($resultSQL->num_rows > 0) {
+            while ($item = $resultSQL->fetch_assoc()) {
+                $curso = new Cursos();
+                $curso->set('codigo', $item['cod']);
+                $curso->set('nombre', $item['nombre']);
+                $codDoc = $item['codDocente'];
                 $docenteController = new DocentesController();
-                $docente = $docenteController->getItem($codDocente);
-                if($docente !==null){
-                    $nombreDocente = $docente->get('nombre');
-                    $docente->set('nombreDocente',$nombreDocente);
-                }else{
-                    echo"No hay docente";
+                $docente = $docenteController->getItem($codDoc);
+
+                if ($docente !== null) {
+                    $nombreDelDocente = $docente->get('nombre');
+                    $curso->set('codDocente', $nombreDelDocente);
+                } else {
+                    echo "Docente no encontrado.";
                 }
                 break;
             }
         }
         return $curso;
     }
-    function addItem($curso)
+
+
+    function addItem($curso, $pk)
     {
-     $nombreCurso = $curso->get('nombre');
-     $ultimoCurso =$this->allData()[count($this->allData()) - 1];
-     $ultimoCodigo =(int)$ultimoCurso->get('cod');
-     $nuevoCodigo = $ultimoCodigo + 1 ;
-     $curso->set('codigoC',$nuevoCodigo);
-     $curso->set('nombre',$nombreCurso);
-        return "Curso agregado con existo, ID: $nuevoCodigo";
     }
     function  updateItem($curso)
     {
-        
     }
-    function deleteItem($codigo){
-
+    function deleteItem($codigo)
+    {
     }
-
-  }
-
-
-?>
+}

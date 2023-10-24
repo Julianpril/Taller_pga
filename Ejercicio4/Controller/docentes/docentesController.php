@@ -1,6 +1,7 @@
 <?php
 
 namespace ejer4\controllers\docente;
+
 use eje4\controllers\EntityController as ControllersEntityController;
 use eje4\controllers\ocupaciones\ocupacionController;
 use eje4\models\docentes\Docentes;
@@ -38,7 +39,7 @@ class DocentesController extends ControllersEntityController
 
     function getItem($codigo)
     {
-        $sql = "select * from " . $this->dataTable . " where codigo=" . $codigo;
+        $sql = "select * from " . $this->dataTable . " where cod=" . $codigo;
         $resultSQL = $this->execSql($sql);
         $docente = null;
         if ($resultSQL->num_rows > 0) {
@@ -62,17 +63,21 @@ class DocentesController extends ControllersEntityController
         return $docente;
     }
 
-
     function addItem($docente, $idOcupacion)
     {
-        $ultimoDocente = $this->allData()[count($this->allData()) - 1];
-        $ultimoCodigo = (int)$ultimoDocente->get('cod');
-        $nuevoCodigo = $ultimoCodigo + 1;
+        $sql = "SELECT MAX(cod) AS ultimo_id FROM " .$this->dataTable;
+        $result = $this->execSql($sql);
+
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            $ultimoID = $row["ultimo_id"];
+            $nuevoCodigo= $ultimoID + 1;
+        }   
         $sql = "INSERT INTO docentes (cod,nombre, idOcupacion) VALUES ('$nuevoCodigo','$docente', $idOcupacion)";
-        echo $sql;
+        echo '<a href="docentes.php">Volver</a><br>';
         $resultSQL = $this->execSql($sql);
         if ($resultSQL) {
-            return "Docente agregado con éxito";
+            return "Docente agregado con éxito <br>bienvenido profe: " . $docente;
         } else {
             return "Error al agregar docente";
         }
