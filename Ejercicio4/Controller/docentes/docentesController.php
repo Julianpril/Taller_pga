@@ -66,7 +66,7 @@ class DocentesController extends ControllersEntityController
     function addItem($docente, $idOcupacion)
     {
         $ultimoDocente = $this->allData()[count($this->allData()) - 1];
-        $ultimoCodigo = (int)$ultimoDocente->get('codigo');
+        $ultimoCodigo = (int)$ultimoDocente->get('cod');
         $nuevoCodigo = $ultimoCodigo + 1;
         $sql = "INSERT INTO docentes (cod,nombre, idOcupacion) VALUES ('$nuevoCodigo','$docente', $idOcupacion)";
         echo $sql;
@@ -78,7 +78,7 @@ class DocentesController extends ControllersEntityController
         }
     }
 
-    function updateItem($estudiante)
+    function updateItem($docente)
     {
     }
 
