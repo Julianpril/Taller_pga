@@ -49,7 +49,7 @@ class ocupacionController extends EntityController
     {
     }
 
-    function updateItem($ocupacion)
+    function updateItem($ocupacion,$pk)
     {
     }
 

@@ -44,7 +44,7 @@ $lista = $docentesController->allData();
                 echo '      <a class="action-links" href="cursos.php">ver</a>';
                 echo '  </td>';
                 echo '  <td class="table-cell">';
-                echo '      <a class="action-links" href="formularioEstudiante.php?operacion=update&codigo=' . $docente->get('codigo') . '">Modificar</a>';
+                echo '      <a class="action-links" href="updateDocente.php?operacion=update&codigo=' . $docente->get('codigo') . '">Modificar</a>';
                 echo '  </td>';
                 echo '  <td class="table-cell">';
                 echo '      <a class="action-links" href="confirmarEliminacion.php?codigo=' . $docente->get('codigo') . '">Eliminar</a>';

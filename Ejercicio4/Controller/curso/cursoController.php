@@ -69,7 +69,7 @@ class cursoController extends ControllersEntityController
     function addItem($curso, $pk)
     {
     }
-    function  updateItem($curso)
+    function  updateItem($curso,$pkk)
     {
     }
     function deleteItem($codigo)
