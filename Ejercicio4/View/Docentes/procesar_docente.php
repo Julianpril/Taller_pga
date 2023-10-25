@@ -9,11 +9,11 @@
 
 <body>
 <?php
-include __DIR__ . '/../controller/database/databasecController.php';
-include __DIR__ . '/../controller/entityController.php';
-include __DIR__ . '/../controller/ocupacion/ocupacionController.php';
-include __DIR__ . '/../controller/docentes/docentesController.php';
-include __DIR__ . '/../model/docentes.php';
+include __DIR__ . '/../../controller/database/databasecController.php';
+include __DIR__ . '/../../controller/entityController.php';
+include __DIR__ . '/../../controller/ocupacion/ocupacionController.php';
+include __DIR__ . '/../../controller/docentes/docentesController.php';
+include __DIR__ . '/../../model/docentes.php';
 use ejer4\controllers\docente\DocentesController;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

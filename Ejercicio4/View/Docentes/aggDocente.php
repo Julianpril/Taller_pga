@@ -1,9 +1,9 @@
 <?php
 
-include __DIR__ . '/../controller/entityController.php';
-include __DIR__ . '/../controller/database/databasecController.php';
-include __DIR__ . '/../model/docentes.php';
-include __DIR__ . '/../controller/ocupacion/ocupacionController.php';
+include __DIR__ . '/../../controller/entityController.php';
+include __DIR__ . '/../../controller/database/databasecController.php';
+include __DIR__ . '/../../model/docentes.php';
+include __DIR__ . '/../../controller/ocupacion/ocupacionController.php';
 
 use eje4\models\docentes\Docentes;
 use ejer4\controllers\docente\DocentesController;
@@ -23,7 +23,7 @@ if ($operacion == 'update') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="Styles/aggdocentestyle.css ">
+    <link rel="stylesheet" href="../Styles/aggdocentestyle.css ">
 </head>
 
 <body>

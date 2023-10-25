@@ -1,9 +1,8 @@
 <?php
-include __DIR__ . '/../controller/entityController.php';
-include __DIR__ . '/../controller/ocupacion/ocupacionController.php';
-include __DIR__ . '/../controller/docentes/docentesController.php';
-include __DIR__ . '/../controller/database/databasecController.php';
-include __DIR__ . '/../Model/docentes.php';
+include __DIR__ . '/../../controller/entityController.php';
+include __DIR__ . '/../../controller/ocupacion/ocupacionController.php';
+include __DIR__ . '/../../controller/docentes/docentesController.php';
+include __DIR__ . '/../../controller/database/databasecController.php';
 
 use eje4\controllers\ocupaciones\ocupacionController;
 use eje4\models\docentes\Docentes;
