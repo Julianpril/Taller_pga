@@ -1,27 +1,25 @@
 <?php
-include __DIR__ . '/../controller/entityController.php';
-include __DIR__ . '/../controller/database/databasecController.php';
-include __DIR__ . '/../controller/ocupacion/ocupacionController.php';
-include __DIR__ . '/../controller/docentes/docentesController.php';
-include __DIR__. '/../model/docentes.php';
+include __DIR__ . '/../../controller/entityController.php';
+include __DIR__ . '/../../controller/database/databasecController.php';
+include __DIR__ . '/../../controller/ocupacion/ocupacionController.php';
+include __DIR__ . '/../../controller/docentes/docentesController.php';
+include __DIR__. '/../../model/docentes.php';
 use ejer4\controllers\docente\DocentesController;
 $docentesController = new DocentesController();
 $lista = $docentesController->allData();
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="Styles/docentes.css">
+    <link rel="stylesheet" type="text/css" href="../Styles/docentes.css">
     <title>Document</title>
 </head>
-
 <body>
     <h1 class="main-heading">Lista de docentes</h1>
     <a class="action-link" href="aggElemento.php">Registrar</a>
-    <a class="action-link" href="cursos.php">Todos los cursos</a>
+    <a class="action-link" href="../Cursos/cursos.php">Todos los cursos</a>
     <table class="data-table">
         <thead>
             <tr>
@@ -41,7 +39,7 @@ $lista = $docentesController->allData();
                 echo '  <td class="table-cell">' . $docente->get('nombre') . '</td>';
                 echo '  <td class="table-cell">' . $docente->get('nombreOcupacion') . '</td>';
                 echo '  <td class="table-cell">';
-                echo '      <a class="action-links" href="cursos.php">ver</a>';
+                echo '      <a class="action-links" href="">ver</a>';
                 echo '  </td>';
                 echo '  <td class="table-cell">';
                 echo '      <a class="action-links" href="formularioEstudiante.php?operacion=update&codigo=' . $docente->get('codigo') . '">Modificar</a>';
@@ -56,5 +54,4 @@ $lista = $docentesController->allData();
         </tbody>
     </table>
 </body>
-
 </html>

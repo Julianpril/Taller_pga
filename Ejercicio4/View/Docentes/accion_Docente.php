@@ -1,8 +1,8 @@
 <?php
-include __DIR__ . '/../controller/entityController.php';
-include __DIR__ . '/../controller/ocupacion/ocupacionController.php';
-include __DIR__ . '/../controller/docentes/docentesController.php';
-include __DIR__ . '/../controller/database/databasecController.php';
+include __DIR__ . '/../../controller/entityController.php';
+include __DIR__ . '/../../controller/ocupacion/ocupacionController.php';
+include __DIR__ . '/../../controller/docentes/docentesController.php';
+include __DIR__ . '/../../controller/database/databasecController.php';
 use ejer4\controllers\docente\DocentesController;
 
 
@@ -12,7 +12,7 @@ $docentescontroller = new DocentesController();
 if($operacion =='delete'){
     $resultado = $docentescontroller->deleteItem($_POST['codigo']);
 }elseif( $resultado = $operacion=='update'){
-    $estudianteController->updateItem($estudiante);
+    $docentescontroller->updateItem($docete);
 }
 ?>
 <!DOCTYPE html>
