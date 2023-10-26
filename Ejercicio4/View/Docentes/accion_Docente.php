@@ -3,18 +3,19 @@ include __DIR__ . '/../../controller/entityController.php';
 include __DIR__ . '/../../controller/ocupacion/ocupacionController.php';
 include __DIR__ . '/../../controller/docentes/docentesController.php';
 include __DIR__ . '/../../controller/database/databasecController.php';
-
+include __DIR__ . '/../../model/docentes.php';
 use eje4\controllers\ocupaciones\ocupacionController;
 use eje4\models\docentes\Docentes;
 use ejer4\controllers\docente\DocentesController;
 
-$operacion = isset($_POST['operacion']) ? $_POST['operacion'] : '';
+$operacion = $_POST['operacion'];
 $resultado = '';
 $docentescontroller = new DocentesController();
 if ($operacion == 'delete') {
     $resultado = $docentescontroller->deleteItem($_POST['codigo']);
 } else {
     $docente = new Docentes();
+    $docente->set('codigo', $_POST['codDoc']);
     $docente->set('nombre', $_POST['nombre_docente']);
     $docente->set('idOcupacion', $_POST['idOcupacion']);
     $ocupacionController = new ocupacionController();

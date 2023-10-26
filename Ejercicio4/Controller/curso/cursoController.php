@@ -64,19 +64,18 @@ class cursoController extends ControllersEntityController
 
 
 
-    function addItem($nombrecurso,$codDocente)
+    function addItem($nombrecurso, $codDocente)
     {
-        $sql = "SELECT MAX(cod) AS ultimo_id FROM " .$this->dataTable;
+        $sql = "SELECT MAX(cod) AS ultimo_id FROM " . $this->dataTable;
         $result = $this->execSql($sql);
 
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
             $ultimoID = $row["ultimo_id"];
-            $nuevoCodigo= $ultimoID + 1;
-        }   
-        $sql = "INSERT INTO " .$this->dataTable ." (cod,nombre, codDocente) VALUES ('$nuevoCodigo','$nombrecurso','$codDocente')";
+            $nuevoCodigo = $ultimoID + 1;
+        }
+        $sql = "INSERT INTO " . $this->dataTable . " (cod,nombre, codDocente) VALUES ('$nuevoCodigo','$nombrecurso','$codDocente')";
         echo '<a href="../../View/Cursos/cursos.php">Volver</a><br>';
-        echo $sql;
         $resultSQL = $this->execSql($sql);
         if ($resultSQL) {
             return "curso agregado: " . $nombrecurso;
@@ -84,8 +83,26 @@ class cursoController extends ControllersEntityController
             return "Error al agregar";
         }
     }
-    function  updateItem($curso,$pkk)
+    function  updateItem($curso, $pkk)
     {
+        $codigo = $curso->get('codigo');
+        $nombre = $curso->get('nombre');
+        $codDocente = $pkk;
+        $registro = $this->getItem($codigo);
+        if (!isset($registro)) {
+            return "El registro no existe";
+        }
+        $sql = "update " . $this->dataTable . " set ";
+        $sql .= "nombre='$nombre', ";
+        $sql .= "codDocente='$codDocente' ";
+        $sql .= "where cod=$codigo";
+
+
+        $resultSQL = $this->execSql($sql);
+        if (!$resultSQL) {
+            return "no se guardo";
+        }
+        return "se guardo con exito";
     }
     function deleteItem($codigo)
     {
@@ -96,5 +113,22 @@ class cursoController extends ControllersEntityController
         } else {
             return "Error al eliminar el curso";
         }
+    }
+    function getCursosByDocenteId($docente_id)
+    {
+        $sql = "SELECT * FROM " . $this->dataTable . " WHERE codDocente = $docente_id";
+        $resultSQL = $this->execSql($sql);
+        $cursos = [];
+
+        if ($resultSQL !== false && $resultSQL->num_rows > 0) {
+            while ($item = $resultSQL->fetch_assoc()) {
+                $curso = new Cursos();
+                $curso->set('codigo', $item['cod']);
+                $curso->set('nombre', $item['nombre']);
+                $cursos[] = $curso;
+            }
+        }
+
+        return $cursos;
     }
 }

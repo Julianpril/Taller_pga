@@ -1,11 +1,18 @@
-/* Estilo para el cuerpo de la página */
-body {
-    background-color: #f0f0f0;
-    text-align: center; /* Centra el texto en el cuerpo */
-    font-family: Arial, sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    
 }
 
-/* Estilo para el título */
+body {
+    font-family: 'Pixelify Sans', sans-serif;
+    background-color: #f0f0f0;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    
+}
 .title {
     font-size: 36px;
     color: #333;

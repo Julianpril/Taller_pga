@@ -1,12 +1,16 @@
 :root{
     --main-color: #3866f2;
 }
-*{
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap');
+
+* {
     margin: 0;
     box-sizing: border-box;
+    
 }
-body{
-    font-family: 'Roboto' , sans-serif;
+
+body {
+    font-family: 'Pixelify Sans', sans-serif;
     background-color: #e5e5f7;
     display: flex;
     align-items: center;

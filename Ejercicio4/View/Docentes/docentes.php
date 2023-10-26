@@ -39,7 +39,7 @@ $lista = $docentesController->allData();
                 echo '  <td class="table-cell">' . $docente->get('nombre') . '</td>';
                 echo '  <td class="table-cell">' . $docente->get('nombreOcupacion') . '</td>';
                 echo '  <td class="table-cell">';
-                echo '      <a class="action-links" href="">ver</a>';
+                echo '      <a class="action-links" href="verSusCursos.php?operacion=view&codDocente=' . $docente->get('codigo') . '">ver</a>';
                 echo '  </td>';
                 echo '  <td class="table-cell">';
                 echo '      <a class="action-links" href="updateDocente.php?operacion=update&codigo=' . $docente->get('codigo') . '">Modificar</a>';
