@@ -53,5 +53,6 @@ $lista = $docentesController->allData();
             ?>
         </tbody>
     </table>
+    <a href="../../../index.php" class="eje">Volver</a>
 </body>
 </html>

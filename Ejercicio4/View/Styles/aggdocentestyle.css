@@ -1,6 +1,4 @@
-:root{
-    --main-color: #3866f2;
-}
+
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap');
 
 * {
@@ -10,6 +8,10 @@
 }
 
 body {
+    background-image: url('rcs/html.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
     font-family: 'Pixelify Sans', sans-serif;
     background-color: #e5e5f7;
     display: flex;
@@ -17,7 +19,8 @@ body {
     min-height: 100vh;
 }
 .form{
-    background-color: white;
+    background-color: transparent;
+    border: 2px solid #1eff05 ;
     width: 90%;
     max-width: 400px;
     margin: 0 auto;
@@ -25,6 +28,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 5px 10px -5px rgb(0,0,0,.3);
     text-align: center;
+    color: #e5e5f7;
 }
 
 .form_title{
@@ -47,7 +51,7 @@ body {
 }
 .form_group{
     position: relative;
-    --color: #5757577e;
+    --color: #ffffff;
 }
 
 .form_input{
@@ -55,7 +59,7 @@ body {
     background: none;
     font-family: inherit;
     font-size: 1rem;
-    color: #706c6c;
+    color: #ffffff;
     padding: .6em .3em;
     border:none;
     outline: none;
@@ -65,7 +69,7 @@ body {
 .form_input:focus + .form_label{
     transform: translateY(-12px)scale(.7);
     transform-origin: top left;
-    --color: #3866f2;
+    --color: #1eff05;
 }
 
 .form_label{
@@ -102,4 +106,8 @@ body {
 .form_input:not(:placeholder-shown) ~ .form_line,
 .form_input:focus ~ .form_line{
     transform: scale(1);
+}
+
+:root{
+    --main-color: #1eff05;
 }

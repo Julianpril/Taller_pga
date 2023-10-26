@@ -40,7 +40,7 @@ if ($operacion == 'update') {
             <div class="from_group">
                 Selecciona la opción deseada de ocupacion:
                 <select name="idOcupacion" required>
-                    <option disabled selected>-Elige una opción-</option>
+                    <option disabled selected >-Elige una opción-</option>
                     <?php
 
                     use eje4\controllers\ocupaciones\ocupacionController;
