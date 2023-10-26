@@ -12,7 +12,7 @@ class NotasController{
         echo "Nota máxima: " . $_POST['max_califi'] . "<br>";
         for ($i = 1; $i <= $_POST['cantidad_notas']; $i++) {
             echo "<label for='nota_$i'>Nota $i:</label>";
-            echo "<input type='number' name='notas[]' required min='{$_POST['min_califi']}' max='{$_POST['max_califi']}' step='0.1'><br><br>";
+            echo "<input type='number' name='notas[]' required min='{$_POST['min_califi']}' max='{$_POST['max_califi']}' step='0.1' required><br><br>";
         }
         echo "<input type='submit' name='submit' value='Enviar'>";
         echo "</form>";
